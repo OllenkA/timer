@@ -11,31 +11,31 @@ const initialState = {
     status: 'START',
     statusPause: 'PAUSE',
     timer: 0,
-}
+};
 
 
-export const runTC = () => (dispatch, getState) => { 
+export const runTC = () => (dispatch) => {
     let timer = setInterval(() => {
         dispatch(start(timer))
     }, 1000);
-}
+};
 
 export const finishTC = () => (dispatch, getState) => { 
-    clearInterval(getState().timer)
+    clearInterval(getState().timer);
     dispatch(finish());
-}
+};
 
 export const pauseTC = () => (dispatch, getState) => {
-    clearInterval(getState().timer)
+    clearInterval(getState().timer);
     dispatch(pause())
-}
+};
 
 export const startIsTC = () => (dispatch) => {
     let timer = setInterval(() => {
         dispatch(startIs(timer))
     }, 1000);
     
-}
+};
     
 
 const reducer = (state = initialState, action) => {
@@ -47,7 +47,7 @@ const reducer = (state = initialState, action) => {
                 minutes: state.minutes = 0,
                 hours: state.hours = 0,
                 status: state.status = 'START'
-            }
+            };
         case START:
             if (state.seconds >= 59 ) {
                 return {
@@ -78,7 +78,7 @@ const reducer = (state = initialState, action) => {
                 statusPause: state.statusPause = 'START',
                 // status: state.status = 'STOP',
                 
-            }
+            };
         case START_IS:
             if (state.seconds >= 59) {
                 return {

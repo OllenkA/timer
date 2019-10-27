@@ -26,7 +26,7 @@ let mapStateToProps = (state) => {
     status: state.status,
     statusPause: state.statusPause
   }
-}
+};
 
 let mapDispatchToProps = (dispatch) => {
   return {
@@ -43,6 +43,6 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(startIsTC())
     }
   }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(StopWatch);

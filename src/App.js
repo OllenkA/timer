@@ -13,18 +13,15 @@ const particlesOpt = {
           }
       }
   }
-}
+};
 
-
-function App(props) {
+function App() {
   return (
     <div className="App">
       <Particles className='particles' params={particlesOpt}/>
       <StopWatch />      
     </div>
   );
-
-
 }
 
 export default App;
