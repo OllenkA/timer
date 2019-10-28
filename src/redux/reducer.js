@@ -34,7 +34,6 @@ export const startIsTC = () => (dispatch) => {
     let timer = setInterval(() => {
         dispatch(startIs(timer))
     }, 1000);
-    
 };
     
 
